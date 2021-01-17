@@ -62,7 +62,7 @@ class Driving_Wheels(object):
 		if targetSpeed > 0:
 			wheel.forward()
 		elif targetSpeed < 0:
-			wheel.backword()
+			wheel.backward()
 		else:
 			wheel.stop()
 
