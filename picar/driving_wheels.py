@@ -52,8 +52,8 @@ class Driving_Wheels(object):
 		@param leftSpeed	An integer between -100 to +100
 		@param rightSpeed	An integer between -100 to +100.
 		'''
-		self.setWheelStatus(self.left_wheel, leftSpeed)
-		self.setWheelStatus(self.right_wheel, rightSpeed)
+		self.setWheelStatus(self.right_wheel, -leftSpeed)
+		self.setWheelStatus(self.left_wheel, -rightSpeed)
 
 	def setWheelStatus(self, wheel, targetSpeed):
 		targetSpeed = int(targetSpeed)
