@@ -94,7 +94,7 @@ class Driving_Wheels(object):
 		self._debug_('Turn to "Ready" position')
 		self.left_wheel.offset = self.forward_A
 		self.right_wheel.offset = self.forward_B
-		self.stop()
+		self.setStatus(0,0)
 
 	def calibration(self):
 		''' Get the front wheels to the calibration position. '''
@@ -122,38 +122,4 @@ class Driving_Wheels(object):
 		self.forward_B = self.cali_forward_B
 		self.db.set('forward_A', self.forward_A)
 		self.db.set('forward_B', self.forward_B)
-		self.stop()
-
-def test():
-	import time
-	back_wheels = Back_Wheels()
-	DELAY = 0.01
-	try:
-		back_wheels.forward()
-		for i in range(0, 100):
-			back_wheels.speed = i
-			print("Forward, speed =", i)
-			time.sleep(DELAY)
-		for i in range(100, 0, -1):
-			back_wheels.speed = i
-			print("Forward, speed =", i)
-			time.sleep(DELAY)
-
-		back_wheels.backward()
-		for i in range(0, 100):
-			back_wheels.speed = i
-			print("Backward, speed =", i)
-			time.sleep(DELAY)
-		for i in range(100, 0, -1):
-			back_wheels.speed = i
-			print("Backward, speed =", i)
-			time.sleep(DELAY)
-	except KeyboardInterrupt:
-		print("KeyboardInterrupt, motor stop")
-		back_wheels.stop()
-	finally:
-		print("Finished, motor stop")
-		back_wheels.stop()
-
-if __name__ == '__main__':
-	test()
+		self.setStatus(0,0)
