@@ -2,7 +2,7 @@ import sys
 from .import front_wheels
 from .import back_wheels
 from .SunFounder_PCA9685 import Servo
-from SunFounder_TB6612 import TB6612
+from .SunFounder_TB6612 import TB6612
 from .import PCF8591
 from .SunFounder_PCA9685 import PCA9685
 
