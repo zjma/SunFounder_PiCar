@@ -1,6 +1,8 @@
 import sys
 from .import front_wheels
 from .import back_wheels
+from .import new_driving_wheels
+
 from .SunFounder_PCA9685 import Servo
 from .import PCF8591
 from .SunFounder_PCA9685 import PCA9685
